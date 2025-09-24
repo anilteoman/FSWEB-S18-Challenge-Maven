@@ -9,7 +9,6 @@ import com.workintech.fswebs18challengemaven.repository.CardRepository;
 import com.workintech.fswebs18challengemaven.repository.CardRepositoryImpl;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -93,6 +92,7 @@ public class MainTest {
         verify(entityManager).persist(card);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void testFindAll() {
         TypedQuery<Card> query = mock(TypedQuery.class);
@@ -102,6 +102,7 @@ public class MainTest {
         assertEquals(2, cards.size());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void testFindByColor_Exists() {
         TypedQuery<Card> query = mock(TypedQuery.class);
@@ -121,6 +122,7 @@ public class MainTest {
         assertEquals(2, foundCards.size());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void testFindByColor_NotExists() {
         TypedQuery<Card> query = mock(TypedQuery.class);
@@ -152,6 +154,7 @@ public class MainTest {
         assertEquals(1L, removed.getId());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void testFindByValue() {
         TypedQuery<Card> query = mock(TypedQuery.class);
@@ -170,6 +173,7 @@ public class MainTest {
         assertEquals(2, cards.size());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void testFindByType() {
         TypedQuery<Card> query = mock(TypedQuery.class);
